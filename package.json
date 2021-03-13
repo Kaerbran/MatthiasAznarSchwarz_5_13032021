@@ -1,0 +1,11 @@
+{
+  "name": "orinoco-project",
+  "version": "1.0.0",
+  "description": "Site e-commerce nomme Orinoco",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:public/css/style.css"
+  },
+  "author": "kaerbran",
+  "license": "ISC"
+}
