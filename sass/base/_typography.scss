@@ -1,10 +1,3 @@
-body {
-    font-family: 'Roboto', sans-serif;
-    font-size: 2rem;
-    font-weight: 100;
-    line-height: 1.7;
-}
-
 h1 {
     font-family: 'Roboto', sans-serif;
     font-weight: 900;
@@ -12,15 +5,22 @@ h1 {
     font-style: italic;
 }
 
-textarea {
+h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+p {
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
-    font-size: 2rem;
+    font-size: 1rem;
 }
 
 button {
     font-family: 'Roboto', sans-serif;
     font-weight: 900;
     font-style: italic;
-    font-size: 2.75rem;
+    font-size: 2rem;
 }
