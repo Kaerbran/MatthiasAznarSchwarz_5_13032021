@@ -37,6 +37,7 @@ const getAllTeddy = async function () {
     }
 }
 
+//fonction est appellée et nous construisons la page d'acceuil. 
 getAllTeddy()
 .then(function (objectTeddy) {
     let anchorMainContent = document.getElementById('mainMain');
@@ -86,18 +87,30 @@ getAllTeddy()
         newBttElem.classList.add("mainCard__btt");
         newBttElem.innerHTML = "Ajouter au panier";
         anchorNewContent.appendChild(newBttElem);
-
-        /*
-        <article class="mainCard">
-            <img class="mainCard__img" src="./public/css/img/teddy_1.jpg" alt="Peluche d'ourse brun, fait main.">
-            <div class="mainCard__txtdiv">
-                <h2 class="mainCard__txtdiv__h2">Nounours brun</h2>
-                <p class="mainCard__txtdiv__p">Un beau nounours brun, fabriqué main, par un artisan Ardechois. L'atlier a été fondé par l'arrière grand-père, un grand passioné de peluches.</p>
-            </div>
-            <button class="btn btn--blue mainCard__btt">Ajouter au panier</button>
-        </article>
-        */
-        
     }
-    console.log(objectTeddy[1]);
+})
+.then(function(){
+    //Fonction pour extraire le numéro d'ID du bouton sélectionné
+    //Est ici, car je sais que l'ensemble des boutons est crée. 
+    let buttons = document.getElementsByClassName("btn");
+    console.log(buttons);
+    for (let index = 0; index < buttons.length; index++) {
+        let element = buttons[index];
+        element.addEventListener('click', getTeddyByID)
+    }
 });
+
+//Fonction pour construire une URL à partir d'un parametre
+const addParameterToURL = async function (teddyID) {
+    let newURL = 'http://localhost:3000/api/teddies/:' + teddyID;
+    console.log(newURL);
+    return newURL;
+}
+
+const getTeddyByID = async function (event){
+    let teddyID = this.parentNode.id;
+    console.log(teddyID);
+     
+    let GetURL = addParameterToURL(teddyID);
+    console.log(GetURL);
+}
