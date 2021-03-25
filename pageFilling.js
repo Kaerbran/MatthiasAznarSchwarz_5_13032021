@@ -113,4 +113,7 @@ const getTeddyByID = async function (event){
      
     let GetURL = addParameterToURL(teddyID);
     console.log(GetURL);
+
+    // Ici il manque le GET pour avoir la requête.
+
 }
