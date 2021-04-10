@@ -85,7 +85,7 @@ getAllTeddy()
         newBttElem.classList.add("btn");
         newBttElem.classList.add("btn--blue");
         newBttElem.classList.add("mainCard__btt");
-        newBttElem.innerHTML = "Ajouter au panier";
+        newBttElem.innerHTML = "Fiche Article";
         anchorNewContent.appendChild(newBttElem);
     }
 })
@@ -110,10 +110,13 @@ const addParameterToURL = async function (teddyID) {
 const getTeddyByID = async function (event){
     let teddyID = this.parentNode.id;
     console.log(teddyID);
-     
+    
     let GetURL = addParameterToURL(teddyID);
     console.log(GetURL);
 
     // Ici il manque le GET pour avoir la requête.
 
+    // construire ensuite la page
 }
+
+
