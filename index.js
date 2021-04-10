@@ -1,9 +1,9 @@
-
+const GetURLAllTeddies = 'http://localhost:3000/api/teddies/';
 
 //fonction GetAllTeddy : nous permet de recevoir un Array avec l'ensemble des ours
-const getTeddy = async function () {
+const getTeddy = async function (APIUrl) {
     try{
-        let responseAllTeddy = await fetch('http://localhost:3000/api/teddies/')
+        let responseAllTeddy = await fetch(APIUrl)
         if(responseAllTeddy.ok){
             let data = await responseAllTeddy.json()
             console.log(data)
@@ -18,7 +18,7 @@ const getTeddy = async function () {
 export {getTeddy};
 
 //fonction est appellée et nous construisons la page d'acceuil. 
-getTeddy()
+getTeddy(GetURLAllTeddies)
 .then(function (objectTeddy) {
     let anchorMainContent = document.getElementById('mainMain');
     for (let index = 0; index < objectTeddy.length; index++) {
