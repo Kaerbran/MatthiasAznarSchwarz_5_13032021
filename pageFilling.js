@@ -1,4 +1,5 @@
 
+
 //fonction GetAllTeddy : nous permet de recevoir un Array avec l'ensemble des ours
 const getAllTeddy = async function () {
     try{
