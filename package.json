@@ -4,8 +4,17 @@
   "description": "Site e-commerce nomme Orinoco",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./sass/main.scss:public/css/style.css"
+    "sass": "sass --watch ./sass/main.scss:public/css/style.css",
+    "build": "webpack"
   },
   "author": "kaerbran",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.13.15",
+    "@babel/preset-env": "^7.13.15",
+    "babel-loader": "^8.2.2",
+    "babel-polyfill": "^6.26.0",
+    "webpack": "^5.31.2",
+    "webpack-cli": "^4.6.0"
+  }
 }

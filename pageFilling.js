@@ -91,13 +91,15 @@ const getTeddyByID = async function (event){
     
     let GetURL = addParameterToURL(teddyID);     
     console.log(GetURL);
-
-    //export ici me permet de transmettre à la page article.html la requête à faire
-    module.exports = GetURL;
-
-    // Nous permet d'aller sur la page article. La belle solution aurait été de mettre un lien directement dans le
-    // code HTML qui est généré. Mais je n'ai pas envie de reprendre tous le code
-    window.location.href = 'article.html';
+    
+    window.location.href = 'article.html'; // Nous permet d'aller sur la page article
 }
+
+export function sayHi(user) {
+    alert(`Hello, ${user}!`);
+  }
+  
+
+  
 
 
