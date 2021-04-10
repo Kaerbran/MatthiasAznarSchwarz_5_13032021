@@ -1,26 +1,4 @@
 
-class purchasableObject {
-    constructor(ObjectID, name, price, description, imageURL, productType){
-        this.ObjectID = ObjectID;
-        this.name = name;
-        this.price = price;
-        this.description = description;
-        this.imageURL = imageURL;
-        this.productType = productType;
-        this.personnalisation = personnalisation;
-    }
-}
-
-class contactDetails {
-    constructor(firstName, lastName, address, city, mail){
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.address = address;
-        this.city = city;
-        this.mail = mail;
-    }
-}
-
 //fonction GetAllTeddy : nous permet de recevoir un Array avec l'ensemble des ours
 const getAllTeddy = async function () {
     try{
@@ -111,14 +89,19 @@ const getTeddyByID = async function (event){
     let teddyID = this.parentNode.id;
     console.log(teddyID);
     
-    export let GetURL = addParameterToURL(teddyID);     //export ici me permet de transmettre
-                                                        //à la page article.html la requête à faire
+    let GetURL = addParameterToURL(teddyID);     
     console.log(GetURL);
+
+    //export ici me permet de transmettre à la page article.html la requête à faire
+    //export let GetURLArticle = GetURL;
+
+    // Nous permet d'aller sur la page article. La belle solution aurait été de mettre un lien directement dans le
+    // code HTML qui est généré. Mais je n'ai pas envie de reprendre tous le code
+    window.location.href = 'article.html';
 
     // Ici il manque le GET pour avoir la requête.
 
     // construire ensuite la page
 }
-
 
 

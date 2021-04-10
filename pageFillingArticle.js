@@ -1,2 +1,2 @@
-import {GetURL} from './pageFilling.js';
+import {GetURLArticle} from 'pageFilling.js';
 
