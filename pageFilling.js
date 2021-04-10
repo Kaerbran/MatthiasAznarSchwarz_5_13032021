@@ -111,12 +111,14 @@ const getTeddyByID = async function (event){
     let teddyID = this.parentNode.id;
     console.log(teddyID);
     
-    let GetURL = addParameterToURL(teddyID);
+    export let GetURL = addParameterToURL(teddyID);     //export ici me permet de transmettre
+                                                        //à la page article.html la requête à faire
     console.log(GetURL);
 
     // Ici il manque le GET pour avoir la requête.
 
     // construire ensuite la page
 }
+
 
 
