@@ -1,7 +1,7 @@
 
 
 //fonction GetAllTeddy : nous permet de recevoir un Array avec l'ensemble des ours
-const getAllTeddy = async function () {
+const getTeddy = async function () {
     try{
         let responseAllTeddy = await fetch('http://localhost:3000/api/teddies/')
         if(responseAllTeddy.ok){
@@ -15,9 +15,10 @@ const getAllTeddy = async function () {
         console.log(e);
     }
 }
+export {getTeddy};
 
 //fonction est appellée et nous construisons la page d'acceuil. 
-getAllTeddy()
+getTeddy()
 .then(function (objectTeddy) {
     let anchorMainContent = document.getElementById('mainMain');
     for (let index = 0; index < objectTeddy.length; index++) {
@@ -83,23 +84,18 @@ getAllTeddy()
 const addParameterToURL = async function (teddyID) {
     let newURL = 'http://localhost:3000/api/teddies/:' + teddyID;
     console.log(newURL);
-    return newURL;
+
+    sessionStorage.setItem('GetURLArticle', JSON.stringify(newURL));
 }
 
 const getTeddyByID = async function (event){
     let teddyID = this.parentNode.id;
     console.log(teddyID);
     
-    let GetURL = addParameterToURL(teddyID);     
-    console.log(GetURL);
-    
+    addParameterToURL(teddyID); // Enregistre via sessionStorage l'URL que l'on doit envoyé pour avoir la fiche article 
+
     window.location.href = 'article.html'; // Nous permet d'aller sur la page article
 }
-
-export function sayHi(user) {
-    alert(`Hello, ${user}!`);
-  }
-  
 
   
 

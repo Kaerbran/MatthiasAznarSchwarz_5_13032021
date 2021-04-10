@@ -1,3 +1,6 @@
-import {GetURLArticle} from 'pageFilling.js';
+import {getTeddy} from './index.js'
 
-console.log(GetURLArticle);
+let GetURL = JSON.parse(sessionStorage.GetURLArticle);
+console.log("The URL value is :" + GetURL);
+
+//sessionStorage.clear();
