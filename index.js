@@ -82,7 +82,7 @@ getTeddy(GetURLAllTeddies)
 
 //Fonction pour construire une URL à partir d'un parametre
 const addParameterToURL = async function (teddyID) {
-    let newURL = 'http://localhost:3000/api/teddies/:' + teddyID;
+    let newURL = 'http://localhost:3000/api/teddies/' + teddyID;
     console.log(newURL);
 
     sessionStorage.setItem('GetURLArticle', JSON.stringify(newURL));
