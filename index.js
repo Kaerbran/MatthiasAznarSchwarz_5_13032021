@@ -3,6 +3,7 @@ const GetURLAllTeddies = 'http://localhost:3000/api/teddies/';
 //fonction GetAllTeddy : nous permet de recevoir un Array avec l'ensemble des ours
 const getTeddy = async function (APIUrl) {
     try{
+        console.log("The URL value is :" + APIUrl);
         let responseAllTeddy = await fetch(APIUrl)
         if(responseAllTeddy.ok){
             let data = await responseAllTeddy.json()
