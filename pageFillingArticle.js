@@ -13,6 +13,7 @@ getTeddy(GetURL)
 
     //Inserer le nom du Teddybear
     document.getElementById('articleNameTeddy').innerHTML = objectTeddy.name;
+    document.getElementById('articleNameTeddy').titel = objectTeddy._id;    //pas une bonne pratique. J'aurais du passer par l'id de cet élement.
 
     //Inserer la description du Teddybear
     document.getElementById('articleDescriptionTeddy').innerHTML = objectTeddy.description;
@@ -30,7 +31,7 @@ getTeddy(GetURL)
     }
 })
 .then(function () {
-    //EventListener 'click' sur le boutton
+    //Ajoute un EventListener de type 'click' sur le boutton
     let elementBttArticle = document.getElementById('articleBttAddBasket');
     elementBttArticle.addEventListener('click', AddToBasket)
 })
@@ -38,14 +39,28 @@ getTeddy(GetURL)
     console.log(err);
 });
 
-
+//Cette fonction permet lors d'un click, d'enregistrer les Teddy ajoutés au panier
 const AddToBasket = function () {
-    let Article = {
-        name : document.getElementById('articleNameTeddy').innerHTML,
-        color : document.getElementById('articleOptionsTeddy').options[document.getElementById('articleOptionsTeddy').selectedIndex].value
-    };
-    console.log(Article);
-    console.log("test");
+    
+    if (document.getElementById('articleOptionsTeddy').options[document.getElementById('articleOptionsTeddy').selectedIndex].value != "no_selection") {
+        let Article = {
+            name : document.getElementById('articleNameTeddy').innerHTML,
+            id : document.getElementById('articleNameTeddy').titel,
+            color : document.getElementById('articleOptionsTeddy').options[document.getElementById('articleOptionsTeddy').selectedIndex].value
+        };
+        console.log(Article);
+
+    } else{
+        console.log("Requête non sauvegardé, car aucune sélection n'a été faite.")
+    }
 
     //il manque ici la mise en memoire de l'object dans un tableau... 
+
+}
+
+//Cette fonction me permet de stocker des objects dans la session Storage. Sous la forme d'un tableau. 
+const AddToDataStorage = function (ObjectToStore, WhereToStore) {
+
+    sessionStorage.setItem(WhereToStore, JSON.stringify(ObjectToStore));
+
 }
